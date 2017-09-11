@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>calculadora 3000</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        <link rel="stylesheet" href="css/materialize.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    </head>
+    <body>
+        <div class="row">
+        <div class="col l-2 s-2"> </div>
+        <div class="col l-8 s-8" style="margin-top: 2%;background-color: #999999;border-left:2px solid #666666;border-bottom:2px solid #666666;">
+            <div class="row" style="margin-top: 5%">
+                <div class="row grey lighten-2" style="border-right:2px solid #666666;border-top:2px solid #666666;">
+                    <h1 id="panel" style="float:right;">0</h1>
+            </div>
+                <div class="col l-3 s-3 center-align">
+                    <div class="row">
+                        <div onclick="borrar()" class="btn red white-text"> ON/C</div>
+                    </div>
+                    <div class="row">
+                        <div id="7" onclick="numeros(this.id)" class="btn black white-text rounded">7</div>
+                    </div>
+                    <div class="row">
+                        <div id="4" onclick="numeros(this.id)" class="btn black white-text rounded">4</div>
+                    </div>
+                    <div class="row">
+                        <div id="1" onclick="numeros(this.id)" class="btn black white-text rounded">1</div>
+                    </div>
+                    <div class="row">
+                        <div id="0" onclick="numeros(this.id)" class="btn black white-text rounded">0</div>
+                    </div>
+                </div>
+                <div class="col l-3 s-3 center-align">
+                    <div class="row">
+                        <div id="maomeno" onclick="signo()" class="btn black white-text"> +/-</div>
+                    </div>
+                    <div class="row">
+                        <div id="8" onclick="numeros(this.id)" class="btn black white-text rounded">8</div>
+                    </div>
+                    <div class="row">
+                        <div id="5" onclick="numeros(this.id)" class="btn black white-text rounded">5</div>
+                    </div>
+                    <div class="row">
+                        <div id="2" onclick="numeros(this.id)" class="btn black white-text rounded">2</div>
+                    </div>
+                    <div class="row">
+                        <div id="." onclick="numeros(this.id)" class="btn black white-text">.</div>
+                    </div>
+                </div>
+                <div class="col l-3 s-3 center-align">
+                    <div class="row">
+                        <div id="raiz" class="btn black white-text">√</div>
+                    </div>
+                    <div class="row">
+                        <div id="9" onclick="numeros(this.id)" class="btn black white-text rounded">9</div>
+                    </div>
+                    <div class="row">
+                        <div id="6" onclick="numeros(this.id)" class="btn black white-text rounded">6</div>
+                    </div>
+                    <div class="row">
+                        <div id="3" onclick="numeros(this.id)" class="btn black white-text rounded">3</div>
+                    </div>
+                    <div class="row">
+                        <div onclick="igual()" class="btn black white-text">=</div>
+                    </div>
+                </div>
+                <div class="col l-3 s-3 center-align">
+                    <div class="row">
+                        <div id="division" onclick="operaciones(this.id)" class="btn black white-text">÷</div>
+                    </div>
+                    <div class="row">
+                        <div id="multiplicacion" onclick="operaciones(this.id)" class="btn black white-text">x</div>
+                    </div>
+                    <div class="row">
+                        <div id="resta" onclick="operaciones(this.id)" class="btn black white-text">-</div>
+                    </div>
+                    <div class="row" style="margin-top:70%">
+                        <div id="suma" onclick="operaciones(this.id)" class="btn black white-text">+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col l-2 s-2"> </div>
+        </div>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>
