@@ -2,6 +2,7 @@ var nuevo="";
 var ant=0;
 var op="";
 var res=0;
+var indicador=false;
 var panel=document.getElementById("display");
 var teclas=document.getElementsByClassName("tecla");
 for(i=0;i<teclas.length;i++){
@@ -21,6 +22,7 @@ for(i=0;i<teclas.length;i++){
               panel.innerHTML="0";
               ant=0;
               nuevo="";
+              indicador=false;
               break;
           case "mas":
               if(res!==0){
@@ -67,17 +69,35 @@ for(i=0;i<teclas.length;i++){
               op="dividido";
               break;
           case "igual":
-              res=res.toString();
-              if(res.length>7){
-                  res=parseFloat(res);
-                  res=res.toExponential(2);
-                  panel.innerHTML=res;
+              if(indicador===true){
+                  if(op==="mas"){
+                res=parseFloat(nuevo)+parseFloat(ant);
+                }
+                if(op==="menos"){
+                    res=parseFloat(nuevo)-parseFloat(ant);
+                }
+                if(op==="por"){
+                    res=parseFloat(nuevo)*parseFloat(ant);
+                }
+                if(op==="dividido"){
+                    res=parseFloat(nuevo)/parseFloat(ant);
+                }
+                nuevo=res;
               }
               else{
-                  panel.innerHTML=res;
-              }
-              ant=nuevo;
-              nuevo=res;
+                ant=nuevo;
+                nuevo=res;
+                indicador=true;
+                }
+                res=res.toString();
+                if(res.length>7){
+                    res=parseFloat(res);
+                    res=res.toExponential(2);
+                    panel.innerHTML=res;
+                }
+                else{
+                    panel.innerHTML=res;
+                }
               break;
           case "sign":
               if(panel.innerHTML!=="0"||panel.innerHTML!==""){
@@ -100,6 +120,7 @@ for(i=0;i<teclas.length;i++){
               panel.innerHTML=nuevo;}; 
               break;
         default:
+            indicador=false;
             nuevo=nuevo.toString();
             if(nuevo.length<=7){
                 if(panel.innerHTML==="0" && id==="0"){}
