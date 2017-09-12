@@ -23,42 +23,50 @@ for(i=0;i<teclas.length;i++){
               nuevo="";
               break;
           case "mas":
-              ant=parseFloat(nuevo);
+              if(res!==0){
+                  ant=parseFloat(res);
+              }
+              else{
+                  ant=parseFloat(nuevo);   
+              }
               nuevo="";
               panel.innerHTML=nuevo;
               op="mas";
               break;
           case "menos":
-              ant=parseFloat(nuevo);
+              if(res!==0){
+                  ant=parseFloat(res);
+              }
+              else{
+                  ant=parseFloat(nuevo);   
+              }
               nuevo="";
               panel.innerHTML=nuevo;
               op="menos"; 
               break;
           case "por":
-              ant=parseFloat(nuevo);
+              if(res!==0){
+                  ant=parseFloat(res);
+              }
+              else{
+                  ant=parseFloat(nuevo);   
+              }
               nuevo="";
               panel.innerHTML=nuevo;
               op="por";
               break;
           case "dividido":
-              ant=parseFloat(nuevo);
+              if(res!==0){
+                  ant=parseFloat(res);
+              }
+              else{
+                  ant=parseFloat(nuevo);   
+              }
               nuevo="";
               panel.innerHTML=nuevo;
               op="dividido";
               break;
           case "igual":
-              if(op==="mas"){
-                res=ant+parseFloat(nuevo);
-              }
-              if(op==="menos"){
-                  res=ant-parseFloat(nuevo);
-              }
-              if(op==="por"){
-                  res=ant*parseFloat(nuevo);
-              }
-              if(op==="dividido"){
-                  res=ant/parseFloat(nuevo);
-              }
               res=res.toString();
               if(res.length>7){
                   res=parseFloat(res);
@@ -98,7 +106,20 @@ for(i=0;i<teclas.length;i++){
                 else{
                 nuevo=nuevo+id;
                 panel.innerHTML=nuevo;}
-            } 
+            }
+            ///////////////////////////////
+            if(op==="mas"){
+                res=ant+parseFloat(nuevo);
+              }
+              if(op==="menos"){
+                  res=ant-parseFloat(nuevo);
+              }
+              if(op==="por"){
+                  res=ant*parseFloat(nuevo);
+              }
+              if(op==="dividido"){
+                  res=ant/parseFloat(nuevo);
+              }
             break;
       }
   });
